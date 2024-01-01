@@ -2,8 +2,7 @@
 This project implements a Caesar cipher encoder/decoder and
 code breaker that breaks any encrypted message by finding a known word in it.
 
-This project is based on a project from the datawars website
-https://app.datawars.io/project/a2d3501e-253c-4fa4-8c88-1d981a31cd7c?page=1
+This project is based on a project "Breaking Caesar's cipher" from the datawars website
 """
 import string
 import random
