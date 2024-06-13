@@ -7,3 +7,10 @@ Here are some interesting algorithmic problems written by me using Python :)
 4. Memoization_data-type_decorators.py - decorators that implement Memoization and data type checking of the input parameters of the function;
 5. sort_bin_array.py - Function sort binary array in linear time without additional memory;
 6. qs&ms_analysis.ipynb - QuickSort and MergeSort analysis;
+7. binary_trees.py - Binary trees:
+    * Convert a binary tree to a string of brackets and vice versa.
+    * Find the height of a tree.
+    * Build all possible binary trees with N nodes.
+    * Histogram for the height of binary trees with N=10 vertices.
+    * Number of binary trees with N vertices.
+    * Build a random binary tree with N vertices.
