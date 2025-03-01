@@ -13,24 +13,39 @@ class Solution:
             found = False
             sq_len = low + (high-low)//2
 
-            sq_sum = 0
+            initial_sq_sum = 0
             for i in range(sq_len):
                 for j in range(sq_len):
-                    sq_sum += mat[i][j]
+                    initial_sq_sum += mat[i][j]
 
-            if sq_sum <= threshold:
+            if initial_sq_sum <= threshold:
                 res = sq_len
                 found = True
             else:
-                for r_add in range(r_len-sq_len):
-                    for c_add in range(c_len-sq_len):
-                        sq_sum = 0
-                        for i in range(sq_len):
-                            for j in range(sq_len):
-                                sq_sum += mat[i+r_add][j+c_add]
-                        
-                        
-                        if sq_sum <= threshold:
+                prev_sum = initial_sq_sum
+                sq_sum = prev_sum
+                for r_add in range(0,r_len-sq_len):
+                    
+                    for c_add in range(0,c_len-sq_len):
+                        sq_sum -= sum(mat[i+r_add][c_add] for i in range(sq_len))
+                        sq_sum += sum(mat[i+r_add][sq_len+c_add] for i in range(sq_len))
+                        if sq_sum <= threshold and res < sq_len:
+                            res = sq_len
+                            found = True
+                    else:
+                        sq_sum = prev_sum
+
+                    sq_sum -= sum(mat[r_add][i] for i in range(sq_len))
+                    sq_sum += sum(mat[sq_len+r_add][i] for i in range(sq_len))
+                    prev_sum = sq_sum
+                    if sq_sum <= threshold and res < sq_len:
+                        res = sq_len
+                        found = True
+                else:
+                    for c_add in range(0,c_len-sq_len):
+                        sq_sum -= sum(mat[i+r_len-sq_len][c_add] for i in range(sq_len))
+                        sq_sum += sum(mat[i+r_len-sq_len][sq_len+c_add] for i in range(sq_len))
+                        if sq_sum <= threshold and res < sq_len:
                             res = sq_len
                             found = True
             
@@ -54,6 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-    
