@@ -1,5 +1,5 @@
 # PROBLEM DESCRIPTON: https://leetcode.com/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold/description/
-# SOLUTION SUMBITION: 
+# SOLUTION SUMBITION: https://leetcode.com/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold/submissions/1559122324/
 from typing import List
 
 class Solution:
