@@ -17,7 +17,7 @@ if rank == 0:
     #     [(2, -1.0), (3, 2.0)]]
     # x = [1.0, 0.0, -1.0, 0.0,1.0, 0.0, -1.0, 0.0]
     
-    mat_data = scipy.io.loadmat("wiki-Talk.mat")
+    mat_data = scipy.io.loadmat("data/wiki-Talk.mat")
     problem = mat_data['Problem'][0, 0]
     A_sparse = problem['A']
 
